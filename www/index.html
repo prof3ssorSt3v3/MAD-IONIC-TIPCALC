@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Tip Calculator</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div ng-controller="tipController">
+                <div class="list">
+                    <label class="item item-input item-stacked-label" title="result">
+                        <span class="input-label">Bill $:</span>
+                        {{inputs.join('')}}
+                    </label>
+                    
+                    <label class="item item-input item-stacked-label" title="result">
+                        <span class="input-label">10% Tip $:</span>
+                        {{tenPercent()}}
+                    </label>
+                    
+                    <label class="item item-input item-stacked-label" title="result">
+                        <span class="input-label">15% Tip $:</span>
+                        {{fifteenPercent()}}
+                    </label>
+
+                </div>
+                <div>
+                    <div class="row ">
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(1)">1</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(2)">2</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(3)">3</button>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(4)">4</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(5)">5</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(6)">6</button>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(7)">7</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(8)">8</button>
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(9)">9</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            &nbsp;
+                        </div>
+                        <div class="col">
+                            <button class="button  button-calm" title="1" ng-click="press(0)">0</button>
+                        </div>
+                        <div class="col">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="button button-dark button-full button-positive" title="1" ng-click="reset()">Reset</button>
+                    </div>
+                </div>
+
+            </div>
+        </ion-content>
+    </ion-pane>
+</body>
+
+</html>
