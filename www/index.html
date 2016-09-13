@@ -33,17 +33,15 @@
                 <div class="list">
                     <label class="item item-input item-stacked-label" title="result">
                         <span class="input-label">Bill $:</span>
-                        {{inputs.join('')}}
+                        <input type="text" class="col-xs-8" title="result" ng-keyup="typed(tip.bill)" ng-model="tip.bill" />
                     </label>
-                    
+
                     <label class="item item-input item-stacked-label" title="result">
-                        <span class="input-label">10% Tip $:</span>
-                        {{tenPercent()}}
+                        <span class="input-label">10% Tip $:</span> {{tip.tenPercent}}
                     </label>
-                    
+
                     <label class="item item-input item-stacked-label" title="result">
-                        <span class="input-label">15% Tip $:</span>
-                        {{fifteenPercent()}}
+                        <span class="input-label">15% Tip $:</span> {{tip.fifteenPercent}}
                     </label>
 
                 </div>

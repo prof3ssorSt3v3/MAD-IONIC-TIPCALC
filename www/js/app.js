@@ -23,21 +23,41 @@ angular.module('starter', ['ionic'])
     });
 
 var app = angular.module('starter');
-app.controller('tipController', function ($scope) {
-    $scope.inputs = [];
-    $scope.tenPercent = function () {
-        let result = $scope.inputs.join('') * 10 / 100;
-        return result === 0 ? '' : result;
-    };
-    $scope.fifteenPercent = function () {
-        let result = $scope.inputs.join('') * 15 / 100;
-        return result === 0 ? '' : result;
-    };
+app.controller('tipController',function ($scope) {
+    let tip = {
+        bill: undefined,
+        tenPercent: undefined,
+        fifteenPercent: undefined,
+        inputs: []
+    }
+
+    $scope.tip = tip;
+    $scope.typed = function (input) {
+        console.debug('Typed input:', [input]);
+        tip.inputs.length = 0;
+        computeTip(input);
+    }
     $scope.press = function (input) {
-        console.debug('Provided input:', [input]);
-        $scope.inputs.push(input);
+        console.debug('Pressed number:', [input]);
+        computeTip(input);
     };
     $scope.reset = function () {
-        $scope.inputs = [];
+        reset();
     };
+
+    var reset = function () {
+        tip.inputs.length = 0;
+        tip.bill = 0;
+        tip.tenPercent = 0;
+        tip.fifteenPercent = 0;
+    };
+
+    var computeTip = function (input) {
+        tip.inputs.push(input);
+        let result = tip.inputs.join('') * 10 / 100;
+        tip.tenPercent = result === 0 ? '' : result;
+        result = tip.inputs.join('') * 15 / 100;
+        tip.fifteenPercent = result === 0 ? '' : result;
+        tip.bill = tip.inputs.join('');
+    }
 });
