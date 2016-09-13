@@ -1,22 +1,19 @@
-Ionic App Base
+Tip Calculator App
 =====================
 
-A starting project for Ionic that optionally supports using custom SCSS.
 
 ## Using this project
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
-
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+This sample lab is for teaching purposes only. All dependencies and modules are uploaded with the sample. In order to run the project just run the following command.
 
 ```bash
-$ npm install -g ionic
+$ ionic serve
 ```
 
-Then run: 
+This project is created using the `blank` template
 
 ```bash
-$ ionic start myProject tabs
+$ ionic start TipCalc blank
 ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
