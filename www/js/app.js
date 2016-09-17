@@ -24,7 +24,7 @@ angular.module('starter', ['ionic'])
 
 var app = angular.module('starter');
 app.controller('tipController',function ($scope) {
-    let tip = {
+    var tip = {
         bill: undefined,
         tenPercent: undefined,
         fifteenPercent: undefined,
@@ -54,7 +54,7 @@ app.controller('tipController',function ($scope) {
 
     var computeTip = function (input) {
         tip.inputs.push(input);
-        let result = tip.inputs.join('') * 10 / 100;
+        var result = tip.inputs.join('') * 10 / 100;
         tip.tenPercent = result === 0 ? '' : result;
         result = tip.inputs.join('') * 15 / 100;
         tip.fifteenPercent = result === 0 ? '' : result;
